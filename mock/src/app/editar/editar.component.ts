@@ -12,15 +12,15 @@ import { JogadorModel } from '../models/jogador-model';
   encapsulation: ViewEncapsulation.None
 })
 export class EditarComponent implements OnInit {
-  private jogador: JogadorModel;
-  private id;
-  private route: ActivatedRoute;
-  private router: Router;
-  private jogadorForm = new FormGroup({
+  jogador: JogadorModel;
+  id;
+  route: ActivatedRoute;
+  router: Router;
+  jogadorForm = new FormGroup({
     nome: new FormControl()
   });
 
-  private mensagem: string = '';
+  mensagem: string = '';
 
   
   constructor(private formBuilder: FormBuilder, private jogadoresService: JogadoresService, route: ActivatedRoute, router: Router) {

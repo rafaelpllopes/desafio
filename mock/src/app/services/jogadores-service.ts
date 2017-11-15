@@ -20,7 +20,7 @@ export class JogadoresService {
       return jogador;
     }
 
-    public getLength(): Number {
+    public getLength(): number {
         return this.jogadores.length;
     }
 }

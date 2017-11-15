@@ -1,4 +1,4 @@
 export class JogadorModel {
-    public life: Number = 100;    
-    constructor(public id: Number, public name: string) {}
+    public life: number = 100;    
+    constructor(public id: number, public name: string) {}
 }

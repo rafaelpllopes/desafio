@@ -10,10 +10,10 @@ import { JogadorModel } from '../models/jogador-model';
   encapsulation: ViewEncapsulation.None
 })
 export class JogoComponent implements OnInit {
-  private jogadores: JogadorModel[] = [];
+  jogadores: JogadorModel[] = [];
   @Output() idJogador = new EventEmitter();
-  private fim: boolean;
-  private mensagem: String = '';
+  fim: boolean;
+  mensagem: String = '';
 
   constructor(private jogadoresService: JogadoresService) {
   }
@@ -24,21 +24,21 @@ export class JogoComponent implements OnInit {
   }
 
   atacar(alvo: number) {
-    this.jogadores[alvo].life -= 20;
+    this.jogadores[alvo.toString()].life -= 20;
     this.vencedor();
   }
 
   vencedor(): void {
     setTimeout(() => {
       if(this.jogadores[0].life == 0){
-        this.mensagem = `${this.jogadores[1].name} venceu`;
+        this.mensagem = `${this.jogadores[1].name} venceu!!!`;
         this.fim = true;
       }
       if(this.jogadores[1].life == 0){
-        this.mensagem =`${this.jogadores[0].name} venceu`;
+        this.mensagem =`${this.jogadores[0].name} venceu!!!`;
         this.fim = true;
       }
-    }, 300);   
+    }, 100);   
   }
 
   reiniciar(): void {
