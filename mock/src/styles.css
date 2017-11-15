@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import	 '~materialize-css/dist/css/materialize.min.css';
+body {
+    font-size: 3em;
+    text-transform: uppercase;
+    text-align: center;
+    background-image: url("assets/img/large.png");
+}
+
+button {
+    text-transform: uppercase;
+}
+
+.editar {
+    display: none;
+}

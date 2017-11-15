@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <section class="col s12 margem">
+            <p class="card-panel teal accent-3 pulse" *ngIf="mensagem">{{mensagem}}</p>
+        </section>
+        <section class="col s6 margem">
+            <p>{{jogadores[0].name}} <a class="btn btn-small" [routerLink]="['editar/0']"><i class="material-icons">edit</i></a></p>
+            <p>Vida: {{jogadores[0].life}}%</p>
+            <button class="btn btn-large red" (click)='atacar(1)' [disabled]="fim">Atacar</button>
+        </section>
+        <section class="col s6 margem">
+            <p>{{jogadores[1].name}} <a class="btn btn-small" [routerLink]="['editar/1']"><i class="material-icons">edit</i></a></p>
+            <p>Vida: {{jogadores[1].life}}%</p>
+            <button class="btn btn-large red" (click)='atacar(0)' [disabled]="fim">Atacar</button>
+        </section>
+        <section class="col s12">
+            <button class="btn btn-large green" (click)='reiniciar()'>Reiniciar</button>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<h1>Mudar nome do jogador</h1>
+<section class="container">
+    <section class="col s12 margem">
+        <p class="card-panel teal accent-3 pulse" *ngIf="mensagem">{{mensagem}}</p>
+    </section>
+    <form [formGroup]="jogadorForm" (submit)="editar($event)">
+        <div class="input-field">
+          <input id="name" name='name' type="text" class="validate" [ngModel]="jogador.name"  formControlName="name" autofocus autocomplete="off">
+          <label for="jogador">Nome Jogador</label>
+        </div>
+        <section *ngIf="jogadorForm.controls.name.invalid">
+            <p *ngIf="jogadorForm.controls.name.errors.required" class="card red accent-3 center"><span class="card-content white-text">Nome é  obrigatório.</span></p>
+            <p *ngIf="jogadorForm.controls.name.errors.minlength" class="card red accent-3 center"><span class="card-content white-text">Tamanho mínimo 3 caracteres.</span></p>
+            <p *ngIf="jogadorForm.controls.name.errors.maxlength" class="card red accent-3 center"><span class="card-content white-text">Tamanho máximo 15 caracteres.</span></p> 
+        </section>
+        <button class="btn btn-large green" type="submit">Salvar</button>
+        <a class="btn btn-large red" [routerLink]="['']">Cancelar</a>
+    </form>
+</section>
+  
